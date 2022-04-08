@@ -92,6 +92,7 @@ export class HomeComponent implements OnInit {
       this.boys.push(this.boyInput);
       this.boyInput = '';
       this.setCookies();
+      this.createLineup();
     }
   }
 
@@ -100,6 +101,7 @@ export class HomeComponent implements OnInit {
       this.boys = this.boys.filter((e) => e !== this.boyInput);
       this.boyInput = '';
       this.setCookies();
+      this.createLineup();
     }
   }
 
@@ -108,6 +110,7 @@ export class HomeComponent implements OnInit {
       this.gils.push(this.gilInput);
       this.gilInput = '';
       this.setCookies();
+      this.createLineup();
     }
   }
 
@@ -116,6 +119,7 @@ export class HomeComponent implements OnInit {
       this.gils = this.gils.filter((e) => e !== this.gilInput);
       this.gilInput = '';
       this.setCookies();
+      this.createLineup();
     }
   }
 }
