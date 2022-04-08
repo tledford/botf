@@ -1,0 +1,103 @@
+<div id="home-container">
+  <ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem>
+      <a ngbNavLink>Players</a>
+      <ng-template ngbNavContent>
+        <div id="players-container" class="container-fluid">
+          <div class="row">
+            <div id="boys-container" class="col-6">
+              <h3>Boys</h3>
+              <table class="table table-striped">
+                <tbody>
+                  <tr *ngFor="let player of boys">
+                    <td>{{ player }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="gils-container" class="col-6">
+              <h3>Gils</h3>
+              <table class="table table-striped">
+                <tbody>
+                  <tr *ngFor="let player of gils">
+                    <td>{{ player }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-6">
+              <form name="boyUpdateForm">
+                <input
+                  type="text"
+                  [(ngModel)]="boyInput"
+                  placeholder="Name"
+                  name="boyUpdate"
+                  class="mb-3 pt-6"
+                />
+                <input
+                  type="button"
+                  class="button mb-3"
+                  (click)="addBoy()"
+                  value="Add Boy"
+                />
+                <input
+                  type="button"
+                  class="button"
+                  (click)="removeBoy()"
+                  value="Remove Boy"
+                />
+              </form>
+            </div>
+            <div class="col-6">
+              <form name="gilUpdateForm">
+                <input
+                  type="text"
+                  [(ngModel)]="gilInput"
+                  placeholder="Name"
+                  name="gilUpdate"
+                  class="mb-3 pt-6"
+                />
+                <input
+                  type="button"
+                  class="button mb-3"
+                  (click)="addGil()"
+                  value="Add Girl"
+                />
+                <input
+                  type="button"
+                  class="button"
+                  (click)="removeGil()"
+                  value="Remove Girl"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink>Lineup</a>
+      <ng-template ngbNavContent>
+        <div id="lineup-container" class="container-fluid">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Player</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let batter of lineup; index as i">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ batter }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
+</div>
