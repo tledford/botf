@@ -122,4 +122,12 @@ export class HomeComponent implements OnInit {
       this.createLineup();
     }
   }
+
+  boyClicked(name: string) {
+    this.boyInput = name;
+  }
+
+  gilClicked(name: string) {
+    this.gilInput = name;
+  }
 }

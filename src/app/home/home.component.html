@@ -10,7 +10,7 @@
               <table class="table table-striped">
                 <tbody>
                   <tr *ngFor="let player of boys">
-                    <td>{{ player }}</td>
+                    <td (click)="boyClicked(player)">{{ player }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -20,7 +20,7 @@
               <table class="table table-striped">
                 <tbody>
                   <tr *ngFor="let player of gils">
-                    <td>{{ player }}</td>
+                    <td (click)="gilClicked(player)">{{ player }}</td>
                   </tr>
                 </tbody>
               </table>
